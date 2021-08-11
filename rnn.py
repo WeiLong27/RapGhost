@@ -69,11 +69,13 @@ def lossFun(inputs, targets, hprev):
 
     return loss, dWxh, dWhh, dWhy, dbh, dby, hs[len(inputs)-1]
 
+
 def sample(h, seed_ix, n):
   """
   sample a sequence of integers from the model
   h is memory state, seed_ix is seed letter for first time step
   """
+
     x = np.zeros((vocab_size, 1))
     x[seed_ix] = 1
     ixes: list[Any] = []
